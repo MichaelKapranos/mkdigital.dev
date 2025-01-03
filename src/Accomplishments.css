@@ -16,6 +16,14 @@
     margin-bottom: 10px;
   }
   
+  .certifications-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%; /* Ensure the wrapper doesn't expand beyond the viewport */
+    overflow: hidden; /* Hide overflow to prevent page expansion */
+  }
+  
   .certifications-scroll {
     display: flex;
     overflow-x: auto;
@@ -23,12 +31,39 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
+    scroll-behavior: smooth;
+    width: 660px; /* Fixed width to display three badges at a time */
   }
   
-  .certifications-scroll img {
-    height: 150px;
+  .credly-badge {
+    min-width: 200px;
     margin-right: 10px;
-    border-radius: 4px;
+  }
+  
+  .credly-badge iframe {
+    width: 200px;
+    height: 200px;
+    border: none;
+  }
+  
+  .scroll-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .scroll-btn.left {
+    left: 0;
+  }
+  
+  .scroll-btn.right {
+    right: 0;
   }
   
   .projects-goals, .future-goals {
