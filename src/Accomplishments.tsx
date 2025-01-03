@@ -43,24 +43,29 @@ const Accomplishments: React.FC = () => {
       <h1>Goals & Accomplishments</h1>
       
       <div className="certifications">
-        <h2>Certifications</h2>
-        <div className="certifications-wrapper">
-          <button className="scroll-btn left" onClick={scrollLeft}>&lt;</button>
-          <div className="certifications-scroll" ref={scrollRef}>
-            {/* Example of Credly badge embeds */}
-            <div className="credly-badge">
-              <iframe src="https://www.credly.com/badges/36c93887-ab85-4615-bc35-bea4f7181064" title="Credly Badge 1"></iframe>
-            </div>
-            <div className="credly-badge">
-              <iframe src="https://www.credly.com/badges/a81169e4-13ce-49ae-a7a4-07ad68bce4d9/public_url" title="Credly Badge 2"></iframe>
-            </div>
-            <div className="credly-badge">
-              <iframe src="https://www.credly.com/badges/436fccd1-d732-49ed-97fe-574bdadb35b3" title="Credly Badge 3"></iframe>
-            </div>
-          </div>
-          <button className="scroll-btn right" onClick={scrollRight}>&gt;</button>
-        </div>
+  <h2>Certifications</h2>
+  <div className="certifications-wrapper">
+    <button className="scroll-btn left" onClick={scrollLeft}>&lt;</button>
+    <div className="certifications-scroll" ref={scrollRef}>
+      <div className="credly-badge">
+        <a href="https://www.credly.com/badges/36c93887-ab85-4615-bc35-bea4f7181064" target="_blank" rel="noopener noreferrer">
+          <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="Credly Badge 1" />
+        </a>
       </div>
+      <div className="credly-badge">
+        <a href="https://www.credly.com/badges/a81169e4-13ce-49ae-a7a4-07ad68bce4d9/public_url" target="_blank" rel="noopener noreferrer">
+          <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="Credly Badge 2" />
+        </a>
+      </div>
+      <div className="credly-badge">
+        <a href="https://www.credly.com/badges/436fccd1-d732-49ed-97fe-574bdadb35b3" target="_blank" rel="noopener noreferrer">
+          <img src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png" alt="Credly Badge 3" />
+        </a>
+      </div>
+    </div>
+    <button className="scroll-btn right" onClick={scrollRight}>&gt;</button>
+  </div>
+</div>
 
       <div className="projects-goals">
         <h2>Current Work & Goals</h2>
