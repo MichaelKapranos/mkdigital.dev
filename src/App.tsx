@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './Header';
+import Sidebar from './Sidebar';
 import AboutMe from './AboutMe';
 import Accomplishments from './Accomplishments';
 import Statistics from './Statistics';
@@ -8,7 +8,7 @@ import Statistics from './Statistics';
 const App: React.FC = () => {
   return (
     <Router>
-      <Header />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<AboutMe />} />
         <Route path="/accomplishments" element={<Accomplishments />} />

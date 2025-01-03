@@ -1,0 +1,47 @@
+.accomplishments-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .accomplishments-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .certifications {
+    margin-bottom: 40px;
+  }
+  
+  .certifications h2 {
+    margin-bottom: 10px;
+  }
+  
+  .certifications-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .certifications-scroll img {
+    height: 150px;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  
+  .projects-goals, .future-goals {
+    margin-bottom: 40px;
+  }
+  
+  .projects-goals h2, .future-goals h2 {
+    margin-bottom: 10px;
+  }
+  
+  .projects-goals p, .future-goals p {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
