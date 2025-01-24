@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={`sidebar-container ${isOpen ? 'open' : ''}`}>
       <button className="sidebar-toggle" onClick={toggleSidebar}>
         ☰
       </button>
