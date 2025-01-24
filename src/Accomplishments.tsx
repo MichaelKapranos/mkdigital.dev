@@ -74,7 +74,10 @@ const Accomplishments: React.FC = () => {
 
       <div className="future-goals">
         <h2>Future Goals</h2>
-        <p>Description to do.</p>
+        <p>*Change Title to --AWS Engineer etc.<br/>
+        *10%+ Pay rise. <br/>
+        *Aws certified professional architect. <br/>
+        *5 k8s exams</p>
       </div>
     </div>
   );

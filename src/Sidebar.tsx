@@ -21,6 +21,7 @@ const Sidebar: React.FC = () => {
         <ul className="nav-links">
           <li><Link to="/" onClick={toggleSidebar}>About Me</Link></li>
           <li><Link to="/accomplishments" onClick={toggleSidebar}>Accomplishments</Link></li>
+          <li><Link to="/projects" onClick={toggleSidebar}>Projects</Link></li>
           <li><Link to="/statistics" onClick={toggleSidebar}>Statistics</Link></li>
         </ul>
       </div>
