@@ -10,16 +10,6 @@ const schema = a.schema({
   Todo: a
     .model({
       content: a.string(),
-      // Example of adding a new field
-      isDone: a.boolean(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
-
-  // Adding the JobSalary model
-  JobSalary: a
-    .model({
-      jobTitle: a.string(),
-      cost: a.integer(), // Use 'integer' instead of 'int'
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });
