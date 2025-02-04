@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaChartBar, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
 import './Sidebar.css';
