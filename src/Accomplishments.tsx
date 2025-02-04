@@ -40,7 +40,7 @@ const Accomplishments: React.FC = () => {
 
   return (
     <div className="accomplishments-container">
-      <h1>Goals & Accomplishments</h1>
+      <h1 className="accomplishments-title">Goals & Accomplishments</h1>
       
       <div className="certifications">
   <h2>Certifications</h2>
@@ -53,13 +53,13 @@ const Accomplishments: React.FC = () => {
         </a>
       </div>
       <div className="credly-badge">
-        <a href="https://www.credly.com/badges/a81169e4-13ce-49ae-a7a4-07ad68bce4d9/public_url" target="_blank" rel="noopener noreferrer">
-          <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="Credly Badge 2" />
+        <a href="https://www.credly.com/badges/436fccd1-d732-49ed-97fe-574bdadb35b3" target="_blank" rel="noopener noreferrer">
+          <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="Credly Badge 3" />
         </a>
       </div>
       <div className="credly-badge">
-        <a href="https://www.credly.com/badges/436fccd1-d732-49ed-97fe-574bdadb35b3" target="_blank" rel="noopener noreferrer">
-          <img src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png" alt="Credly Badge 3" />
+        <a href="https://www.credly.com/badges/a81169e4-13ce-49ae-a7a4-07ad68bce4d9/public_url" target="_blank" rel="noopener noreferrer">
+          <img src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png" alt="Credly Badge 2" />
         </a>
       </div>
     </div>
@@ -69,15 +69,29 @@ const Accomplishments: React.FC = () => {
 
       <div className="projects-goals">
         <h2>Current Work & Goals</h2>
-        <p>Description to do.</p>
+        <p>
+        -Complete my driving tests<br/>
+        -Complete first K8s exam (KCNA)<br/>
+        -Aws certified professional architect<br/>
+        -Official title change to cloud Engineer(or similar)<br/>
+        -Finish project, Magic Mirror<br/>
+        -Make good progression on Project, Creating Minecraft<br/>
+        -Making progress in CUR in AWS learning a bit more about cost optimisation <br/>
+        -New AWS projects
+        </p>
       </div>
 
       <div className="future-goals">
         <h2>Future Goals</h2>
-        <p>*Change Title to --AWS Engineer etc.<br/>
-        *10%+ Pay rise. <br/>
-        *Aws certified professional architect. <br/>
-        *5 k8s exams</p>
+        <p>
+        -Buy a car <br/>
+        -Completion of the kubestronaut title of 5 k8 certifications <br/>
+        -Move in with my friend (new place/my place)<br/>
+        -Create a stocks Machine learning model to play about with the technology<br/>
+        -Learn more about the stock market<br/>
+        -Data engineer certification in AWS<br/>
+        -AI certification?
+        </p>
       </div>
     </div>
   );

@@ -1,0 +1,46 @@
+.projects-container {
+    max-width: 800px;
+    margin: 0 auto;
+    /*padding: 20px;*/
+    text-align: center;
+  }
+  
+  .projects-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .project.left {
+    flex-direction: row;
+  }
+  
+  .project.right {
+    flex-direction: row-reverse;
+  }
+  
+  .project img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .project.right img {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  
+  .project p {
+    flex: 1;
+    font-size: 1.2em;
+    color: #555;
+  }

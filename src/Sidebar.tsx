@@ -1,30 +1,41 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome, FaChartBar, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
 import './Sidebar.css';
 
-const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Sidebar = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+  const handleMouseEnter = () => {
+    setIsExpanded(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsExpanded(false);
   };
 
   return (
-    <div className={`sidebar-container ${isOpen ? 'open' : ''}`}>
-      <button className="sidebar-toggle" onClick={toggleSidebar}>
-        ☰
-      </button>
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <button className="close-btn" onClick={toggleSidebar}>
-          &times;
-        </button>
-        <ul className="nav-links">
-          <li><Link to="/" onClick={toggleSidebar}>About Me</Link></li>
-          <li><Link to="/accomplishments" onClick={toggleSidebar}>Accomplishments</Link></li>
-          <li><Link to="/projects" onClick={toggleSidebar}>Projects</Link></li>
-          <li><Link to="/statistics" onClick={toggleSidebar}>Statistics</Link></li>
-        </ul>
-      </div>
+    <div
+      className={`sidebar ${isExpanded ? 'expanded' : ''}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Link to="/" className="sidebar-icon">
+        <FaHome />
+        {isExpanded && <span>Home</span>}
+      </Link>
+      <Link to="/statistics" className="sidebar-icon">
+        <FaChartBar />
+        {isExpanded && <span>Statistics</span>}
+      </Link>
+      <Link to="/projects" className="sidebar-icon">
+        <FaProjectDiagram />
+        {isExpanded && <span>Projects</span>}
+      </Link>
+      <Link to="/accomplishments" className="sidebar-icon">
+        <FaTrophy />
+        {isExpanded && <span>Accomplishments</span>}
+      </Link>
     </div>
   );
 };
