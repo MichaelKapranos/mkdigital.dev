@@ -24,6 +24,7 @@ const Statistics = () => {
 
   const fetchSalaries = async () => {
     try {
+      console.log(client.models); // Check if JobSalary is present
       const { data: jobSalaries } = await client.models.JobSalary.list();
       setSalaryData(jobSalaries as JobSalary[]);
     } catch (error) {

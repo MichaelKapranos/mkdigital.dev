@@ -5,6 +5,7 @@ import AboutMe from './AboutMe';
 import Accomplishments from './Accomplishments';
 import Statistics from './Statistics';
 import Projects from './Projects';
+import Todolist from './TodoList';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/accomplishments" element={<Accomplishments />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/Todolist" element={<Todolist />} />
       </Routes>
     </Router>
   );
