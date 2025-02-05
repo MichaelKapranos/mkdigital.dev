@@ -4,6 +4,7 @@ import type { Schema } from '../amplify/data/resource'; // Adjust the path if ne
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import './Statistics.css';
+import type { TooltipItem } from 'chart.js';
 
 const client = generateClient<Schema>();
 
@@ -32,6 +33,11 @@ const Statistics = () => {
     }
   };
 
+  const calculatePercentageIncrease = (oldValue: number, newValue: number) => {
+    const increase = newValue - oldValue;
+    return ((increase / oldValue) * 100).toFixed(2);
+  };
+
   const data = {
     labels: salaryData.map(job => job.jobTitle),
     datasets: [
@@ -46,6 +52,22 @@ const Statistics = () => {
   };
 
   const options = {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(tooltipItem: TooltipItem<'bar'>) {
+            const cost = tooltipItem.raw as number;
+            const percentageIncrease = calculatePercentageIncrease(37064, cost);
+            return `${tooltipItem.dataset.label}: $${cost.toLocaleString()} (${percentageIncrease}% increase from £37,064)`;
+          }
+        }
+      },
+      legend: {
+        labels: {
+          color: '#333', // Set the color to match the <h2> tags
+        }
+      }
+    },
     scales: {
       y: {
         beginAtZero: true,
@@ -67,6 +89,17 @@ const Statistics = () => {
       <div className="Statistics">
         <h2>Average Incomes for Cloud Engineering Jobs</h2>
         <Bar data={data} options={options} />
+      </div>
+      <div className="projects-goals">
+        <h2>Average pay</h2>
+        <p>
+          Cloud engineer, £32K - £52K/yr. £41K/yr Average base pay <br/>
+          Devops Engineer, £33K - £49K/yr. £40K/yr Average base pay <br/>
+          Site Reliability Engineer(SRE), £35K - £53K/yr. £43K/yr Average base pay <br/>
+          Aws Cloud Engineer, £34K - £57K/yr. £44K/yr Average base pay<br/>
+          Aws Devops Engineer, £33K - £51K/yr. £41K/yr Average base pay<br/>
+          <br/><br/>Most of these jobs also have an average bonus of 1-3k
+        </p>
       </div>
     </div>
   );
