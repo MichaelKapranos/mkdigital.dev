@@ -70,13 +70,14 @@ const Accomplishments: React.FC = () => {
       <div className="projects-goals">
         <h2>Current Work & Goals</h2>
         <p>
+        -Documentation of projects/goals/progress/tickets<br/>
         -Complete my driving tests<br/>
         -Complete first K8s exam (KCNA)<br/>
         -Aws certified professional architect<br/>
         -Official title change to cloud Engineer(or similar)<br/>
         -Finish project, Magic Mirror<br/>
         -Make good progression on Project, Creating Minecraft<br/>
-        -Making progress in CUR in AWS learning a bit more about cost optimisation <br/>
+        -Learn more about cost optimisation, CUR <br/>
         -New AWS projects
         </p>
       </div>

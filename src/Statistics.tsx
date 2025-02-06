@@ -74,7 +74,7 @@ const Statistics = () => {
         ticks: {
           callback: function(value: string | number) {
             if (typeof value === 'number') {
-              return '$' + value.toLocaleString();
+              return '£' + value.toLocaleString();
             }
             return value;
           }
@@ -96,8 +96,8 @@ const Statistics = () => {
           Cloud engineer, £32K - £52K/yr. £41K/yr Average base pay <br/>
           Devops Engineer, £33K - £49K/yr. £40K/yr Average base pay <br/>
           Site Reliability Engineer(SRE), £35K - £53K/yr. £43K/yr Average base pay <br/>
-          Aws Cloud Engineer, £34K - £57K/yr. £44K/yr Average base pay<br/>
-          Aws Devops Engineer, £33K - £51K/yr. £41K/yr Average base pay<br/>
+          Aws Cloud Engineer, £34K - £57K/yr. £44K/yr Average base pay (Average 2k bonus) <br/>
+          Aws Devops Engineer, £33K - £51K/yr. £41K/yr Average base pay (Average 3k bonus)<br/>
           <br/><br/>Most of these jobs also have an average bonus of 1-3k
         </p>
       </div>
