@@ -9,7 +9,13 @@ const AboutMe: React.FC = () => {
 
       <div className="WorkExperience">
       <h2>Work Experience</h2>
-      <p>Temp</p>
+      <p>- Software developer moving into cloud technologies
+        <br/> - Working on certifications 
+        <br/> - A little about personal projects 
+        <br/> - A little about callisto, the move over to the new technologies 
+        <br/> - A little about working in MDS on change
+        <br/> - Briefly future plans work wise
+      </p>
       </div>
     </div>
   );
