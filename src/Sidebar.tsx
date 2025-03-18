@@ -24,15 +24,15 @@ const Sidebar = () => {
         <FaHome />
         {isExpanded && <span>Home</span>}
       </Link>
-      <Link to="/statistics" className="sidebar-icon">
+      <Link to="./statistics" className="sidebar-icon">
         <FaChartBar />
         {isExpanded && <span>Statistics</span>}
       </Link>
-      <Link to="/projects" className="sidebar-icon">
+      <Link to="./projects" className="sidebar-icon">
         <FaProjectDiagram />
         {isExpanded && <span>Projects</span>}
       </Link>
-      <Link to="/accomplishments" className="sidebar-icon">
+      <Link to="./accomplishments" className="sidebar-icon">
         <FaTrophy />
         {isExpanded && <span>Accomplishments</span>}
       </Link>

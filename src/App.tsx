@@ -6,6 +6,7 @@ import Accomplishments from './Accomplishments';
 import Statistics from './Statistics';
 import Projects from './Projects';
 
+
 const App: React.FC = () => {
   return (
      <Router>
