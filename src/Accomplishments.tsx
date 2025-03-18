@@ -54,32 +54,34 @@ const Accomplishments: React.FC = () => {
   const [futureGoals, setFutureGoals] = useState<Goal[]>([]);
 
   useEffect(() => {
-    const fetchGoals = async () => {
-      try {
-        const { data: currentGoalsData } = await client.models.CurrentGoal.list();
-        const { data: futureGoalsData } = await client.models.FutureGoal.list();
-        setCurrentGoals(currentGoalsData as Goal[]);
-        setFutureGoals(futureGoalsData as Goal[]);
-      } catch (error) {
-        console.error('Error fetching goals:', error);
-      }
-    };
+    const observeCurrentGoals = client.models.CurrentGoal.observeQuery().subscribe({
+      next: (data) => setCurrentGoals(data.items as Goal[]),
+    });
 
-    fetchGoals();
+    const observeFutureGoals = client.models.FutureGoal.observeQuery().subscribe({
+      next: (data) => setFutureGoals(data.items as Goal[]),
+    });
+
+    return () => {
+      observeCurrentGoals.unsubscribe();
+      observeFutureGoals.unsubscribe();
+    };
   }, []);
 
   const handleStatusChange = async (index: number, type: 'current' | 'future', newStatus: string) => {
     try {
       if (type === 'current') {
         const updatedGoals = [...currentGoals];
-        updatedGoals[index] = { ...updatedGoals[index], status: newStatus };
+        const goalToUpdate = updatedGoals[index];
+        goalToUpdate.status = newStatus;
         setCurrentGoals(updatedGoals);
-        await client.models.CurrentGoal.update(updatedGoals[index].id, { status: newStatus });
+        await client.models.CurrentGoal.update({ id: goalToUpdate.id, status: newStatus });
       } else {
         const updatedGoals = [...futureGoals];
-        updatedGoals[index] = { ...updatedGoals[index], status: newStatus };
+        const goalToUpdate = updatedGoals[index];
+        goalToUpdate.status = newStatus;
         setFutureGoals(updatedGoals);
-        await client.models.FutureGoal.update(updatedGoals[index].id, { status: newStatus });
+        await client.models.FutureGoal.update({ id: goalToUpdate.id, status: newStatus });
       }
     } catch (error) {
       console.error('Error updating goal status:', error);
@@ -177,4 +179,3 @@ const Accomplishments: React.FC = () => {
 };
 
 export default Accomplishments;
-
