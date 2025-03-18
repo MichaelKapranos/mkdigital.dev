@@ -1,5 +1,17 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './Accomplishments.css';
+import { generateClient } from "aws-amplify/data";
+import type { Schema } from '../amplify/data/resource'; // Adjust the path if necessary
+
+const client = generateClient<Schema>();
+
+type Goal = {
+  id: string;
+  task: string | null;
+  status: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
 
 const Accomplishments: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -38,37 +50,39 @@ const Accomplishments: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const [currentGoals, setCurrentGoals] = useState([
-    { task: 'Documentation of projects/goals/progress/tickets', status: 'Not Started' },
-    { task: 'Complete my driving tests', status: 'In Progress' },
-    { task: 'Complete first K8s exam (KCNA)', status: 'On Hold' },
-    { task: 'AWS certified professional architect', status: 'Done' },
-    { task: 'Official title change to cloud Engineer(or similar)', status: 'Not Started' },
-    { task: 'Finish project, Magic Mirror', status: 'In Progress' },
-    { task: 'Make good progression on Project, Creating Minecraft', status: 'Not Started' },
-    { task: 'Learn more about cost optimisation, CUR', status: 'Not Started' },
-    { task: 'New AWS projects', status: 'Not Started' },
-  ]);
+  const [currentGoals, setCurrentGoals] = useState<Goal[]>([]);
+  const [futureGoals, setFutureGoals] = useState<Goal[]>([]);
 
-  const [futureGoals, setFutureGoals] = useState([
-    { task: 'Buy a car', status: 'Not Started' },
-    { task: 'Completion of the kubestronaut title of 5 k8 certifications', status: 'Not Started' },
-    { task: 'Move in with my friend (new place/my place)', status: 'Not Started' },
-    { task: 'Create a stocks Machine learning model to play about with the technology', status: 'Not Started' },
-    { task: 'Learn more about the stock market', status: 'Not Started' },
-    { task: 'Data engineer certification in AWS', status: 'Not Started' },
-    { task: 'AI certification?', status: 'Not Started' },
-  ]);
+  useEffect(() => {
+    const fetchGoals = async () => {
+      try {
+        const { data: currentGoalsData } = await client.models.CurrentGoal.list();
+        const { data: futureGoalsData } = await client.models.FutureGoal.list();
+        setCurrentGoals(currentGoalsData as Goal[]);
+        setFutureGoals(futureGoalsData as Goal[]);
+      } catch (error) {
+        console.error('Error fetching goals:', error);
+      }
+    };
 
-  const handleStatusChange = (index: number, type: 'current' | 'future', newStatus: string) => {
-    if (type === 'current') {
-      const updatedGoals = [...currentGoals];
-      updatedGoals[index].status = newStatus;
-      setCurrentGoals(updatedGoals);
-    } else {
-      const updatedGoals = [...futureGoals];
-      updatedGoals[index].status = newStatus;
-      setFutureGoals(updatedGoals);
+    fetchGoals();
+  }, []);
+
+  const handleStatusChange = async (index: number, type: 'current' | 'future', newStatus: string) => {
+    try {
+      if (type === 'current') {
+        const updatedGoals = [...currentGoals];
+        updatedGoals[index] = { ...updatedGoals[index], status: newStatus };
+        setCurrentGoals(updatedGoals);
+        await client.models.CurrentGoal.update(updatedGoals[index].id, { status: newStatus });
+      } else {
+        const updatedGoals = [...futureGoals];
+        updatedGoals[index] = { ...updatedGoals[index], status: newStatus };
+        setFutureGoals(updatedGoals);
+        await client.models.FutureGoal.update(updatedGoals[index].id, { status: newStatus });
+      }
+    } catch (error) {
+      console.error('Error updating goal status:', error);
     }
   };
 
@@ -113,11 +127,11 @@ const Accomplishments: React.FC = () => {
           </thead>
           <tbody>
             {currentGoals.map((goal, index) => (
-              <tr key={index}>
+              <tr key={goal.id}>
                 <td>{goal.task}</td>
                 <td>{goal.status}</td>
                 <td>
-                  <select value={goal.status} onChange={(e) => handleStatusChange(index, 'current', e.target.value)}>
+                  <select value={goal.status ?? ''} onChange={(e) => handleStatusChange(index, 'current', e.target.value)}>
                     <option value="Not Started">Not Started</option>
                     <option value="On Hold">On Hold</option>
                     <option value="In Progress">In Progress</option>
@@ -142,11 +156,11 @@ const Accomplishments: React.FC = () => {
           </thead>
           <tbody>
             {futureGoals.map((goal, index) => (
-              <tr key={index}>
+              <tr key={goal.id}>
                 <td>{goal.task}</td>
                 <td>{goal.status}</td>
                 <td>
-                  <select value={goal.status} onChange={(e) => handleStatusChange(index, 'future', e.target.value)}>
+                  <select value={goal.status ?? ''} onChange={(e) => handleStatusChange(index, 'future', e.target.value)}>
                     <option value="Not Started">Not Started</option>
                     <option value="On Hold">On Hold</option>
                     <option value="In Progress">In Progress</option>
@@ -163,3 +177,4 @@ const Accomplishments: React.FC = () => {
 };
 
 export default Accomplishments;
+

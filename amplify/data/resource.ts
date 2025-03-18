@@ -21,6 +21,22 @@ const schema = a.schema({
       cost: a.integer(), // Use 'integer' instead of 'int'
     })
     .authorization((allow) => [allow.publicApiKey()]),
+
+  // Adding the CurrentGoal model
+  CurrentGoal: a
+    .model({
+      task: a.string(),
+      status: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+
+  // Adding the FutureGoal model
+  FutureGoal: a
+    .model({
+      task: a.string(),
+      status: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -61,6 +77,12 @@ Fetch records from the database and use them in your frontend component.
 
 /* For example, in a React component, you can use this snippet in your
   function's RETURN statement */
-// const { data: todos } = await client.models.Todo.list()
+// const { data: currentGoals } = await client.models.CurrentGoal.list()
+// const { data: futureGoals } = await client.models.FutureGoal.list()
 
-// return <ul>{todos.map(todo => <li key={todo.id}>{todo.content}</li>)}</ul>
+// return (
+//   <div>
+//     <ul>{currentGoals.map(goal => <li key={goal.id}>{goal.task} - {goal.status}</li>)}</ul>
+//     <ul>{futureGoals.map(goal => <li key={goal.id}>{goal.task} - {goal.status}</li>)}</ul>
+//   </div>
+// )
