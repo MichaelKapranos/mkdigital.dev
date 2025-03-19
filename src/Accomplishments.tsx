@@ -90,7 +90,7 @@ const Accomplishments: React.FC = () => {
         -Move in with my friend (new place/my place)<br/>
         -Create a stocks Machine learning model to play about with the technology<br/>
         -Learn more about the stock market<br/>
-        -Data engineer certification in AWS<br/>
+        -Data engineer certification in AWSs<br/>
         -AI certification?
         </p>
       </div>
