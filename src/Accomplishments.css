@@ -14,6 +14,9 @@
 }
 
 .certifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 40px;
 }
 
@@ -26,8 +29,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  overflow: hidden;
+  max-width: 660px; /* Maximum width to fit 3 badges */
+  width: 100%;
+  /* overflow: hidden; */
 }
 
 .certifications-scroll {
@@ -38,7 +42,7 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   scroll-behavior: smooth;
-  width: auto;
+  width: 100%;
   justify-content: center;
   overflow-x: auto; /* Enable horizontal scrolling */
 }
@@ -68,11 +72,11 @@
 }
 
 .scroll-btn.left {
-  left: 10px; /* Position directly next to the badges */
+  left: -5%; /* Position outside the left side of the badges */
 }
 
 .scroll-btn.right {
-  right: 10px; /* Position directly next to the badges */
+  right: -5%; /* Position outside the right side of the badges */
 }
 
 .projects-goals, .future-goals {
@@ -114,37 +118,41 @@
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
-  .certifications-scroll {
-    width: 440px; /* Adjust to fit 2 badges */
+  .certifications-wrapper {
+    max-width: 440px; /* Adjust to fit 2 badges */
   }
 
-  .credly-badge {
-    display: block; /* Ensure badges are visible */
+  .certifications-scroll {
+    width: 420px; /* Adjust to fit 2 badges */
   }
 
   .scroll-btn.left {
-    left: 5px; /* Adjust for smaller screens */
+    left: -40px; /* Adjust for smaller screens */
+    margin-left: -5px; /* Adjust to ensure visibility */
   }
 
   .scroll-btn.right {
-    right: 5px; /* Adjust for smaller screens */
+    right: -40px; /* Adjust for smaller screens */
+    margin-right: -5px; /* Adjust to ensure visibility */
   }
 }
 
 @media (max-width: 480px) {
-  .certifications-scroll {
-    width: 220px; /* Adjust to fit 1 badge */
+  .certifications-wrapper {
+    max-width: 220px; /* Adjust to fit 1 badge */
   }
 
-  .credly-badge {
-    display: block; /* Ensure badges are visible */
+  .certifications-scroll {
+    width: 200px; /* Adjust to fit 1 badge */
   }
 
   .scroll-btn.left {
-    left: 5px; /* Adjust for smaller screens */
+    left: -30px; /* Adjust for smaller screens */
+    margin-left: -5px; /* Adjust to ensure visibility */
   }
 
   .scroll-btn.right {
-    right: 5px; /* Adjust for smaller screens */
+    right: -30px; /* Adjust for smaller screens */
+    margin-right: -5px; /* Adjust to ensure visibility */
   }
 }

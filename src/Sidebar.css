@@ -5,7 +5,7 @@
   width: 50px;
   background-color: #333;
   color: white;
-  transition: width 0.3s;
+  transition: width 0.5s;
   overflow: hidden;
 }
 
@@ -20,6 +20,7 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
+  height: 17px;
 }
 
 .sidebar-icon span {
