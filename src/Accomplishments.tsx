@@ -18,21 +18,13 @@ const Accomplishments: React.FC = () => {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      if (scrollRef.current.scrollLeft === 0) {
-        scrollRef.current.scrollLeft = scrollRef.current.scrollWidth / 2;
-      } else {
-        scrollRef.current.scrollBy({ left: -220, behavior: 'smooth' });
-      }
+      scrollRef.current.scrollBy({ left: -210, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      if (scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= scrollRef.current.scrollWidth) {
-        scrollRef.current.scrollLeft = 0;
-      } else {
-        scrollRef.current.scrollBy({ left: 220, behavior: 'smooth' });
-      }
+      scrollRef.current.scrollBy({ left: 210, behavior: 'smooth' });
     }
   };
 
@@ -42,7 +34,7 @@ const Accomplishments: React.FC = () => {
         if (scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= scrollRef.current.scrollWidth) {
           scrollRef.current.scrollLeft = 0;
         } else {
-          scrollRef.current.scrollBy({ left: 220, behavior: 'smooth' });
+          scrollRef.current.scrollBy({ left: 210, behavior: 'smooth' });
         }
       }
     }, 3000); // Adjust the interval as needed
@@ -56,22 +48,21 @@ const Accomplishments: React.FC = () => {
   useEffect(() => {
     try {
       console.log(client.models); // Check if JobSalary is present
-    const observeCurrentGoals = client.models.CurrentGoal.observeQuery().subscribe({
-      next: (data) => setCurrentGoals(data.items as Goal[]),
-    });
+      const observeCurrentGoals = client.models.CurrentGoal.observeQuery().subscribe({
+        next: (data) => setCurrentGoals(data.items as Goal[]),
+      });
 
-    const observeFutureGoals = client.models.FutureGoal.observeQuery().subscribe({
-      next: (data) => setFutureGoals(data.items as Goal[]),
-    });
+      const observeFutureGoals = client.models.FutureGoal.observeQuery().subscribe({
+        next: (data) => setFutureGoals(data.items as Goal[]),
+      });
 
-
-    return () => {
-      observeCurrentGoals.unsubscribe();
-      observeFutureGoals.unsubscribe();
-    };
-  } catch (error) {
-    console.error('Error fetching salaries:', error);
-  }
+      return () => {
+        observeCurrentGoals.unsubscribe();
+        observeFutureGoals.unsubscribe();
+      };
+    } catch (error) {
+      console.error('Error fetching salaries:', error);
+    }
   }, []);
 
   const handleStatusChange = async (index: number, type: 'current' | 'future', newStatus: string) => {

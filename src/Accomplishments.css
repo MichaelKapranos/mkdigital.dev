@@ -31,7 +31,6 @@
   justify-content: center;
   max-width: 660px; /* Maximum width to fit 3 badges */
   width: 100%;
-  /* overflow: hidden; */
 }
 
 .certifications-scroll {
@@ -43,7 +42,6 @@
   background-color: #f9f9f9;
   scroll-behavior: smooth;
   width: 100%;
-  justify-content: center;
   overflow-x: auto; /* Enable horizontal scrolling */
 }
 
@@ -128,12 +126,10 @@
 
   .scroll-btn.left {
     left: -40px; /* Adjust for smaller screens */
-    margin-left: -5px; /* Adjust to ensure visibility */
   }
 
   .scroll-btn.right {
     right: -40px; /* Adjust for smaller screens */
-    margin-right: -5px; /* Adjust to ensure visibility */
   }
 }
 
@@ -148,11 +144,9 @@
 
   .scroll-btn.left {
     left: -30px; /* Adjust for smaller screens */
-    margin-left: -5px; /* Adjust to ensure visibility */
   }
 
   .scroll-btn.right {
     right: -30px; /* Adjust for smaller screens */
-    margin-right: -5px; /* Adjust to ensure visibility */
   }
 }
