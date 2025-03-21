@@ -58,7 +58,7 @@ const Statistics = () => {
           label: function(tooltipItem: TooltipItem<'bar'>) {
             const cost = tooltipItem.raw as number;
             const percentageIncrease = calculatePercentageIncrease(37064, cost);
-            return `${tooltipItem.dataset.label}: $${cost.toLocaleString()} (${percentageIncrease}% increase from £37,064)`;
+            return `${tooltipItem.dataset.label}: £${cost.toLocaleString()} (${percentageIncrease}% increase from £37,064)`;
           }
         }
       },

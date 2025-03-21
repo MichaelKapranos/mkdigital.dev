@@ -89,6 +89,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  table-layout: fixed; /* Ensure columns maintain their widths */
 }
 
 .goals-table th, .goals-table td {
@@ -112,6 +113,16 @@
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
+}
+
+/* Column widths */
+.goals-table th:nth-child(1), .goals-table td:nth-child(1) {
+  width: 75%; /* Task column */
+}
+
+.goals-table th:nth-child(2), .goals-table td:nth-child(2),
+.goals-table th:nth-child(3), .goals-table td:nth-child(3) {
+  width: 12.5%; /* Status and Change Status columns */
 }
 
 /* Media queries for responsiveness */
