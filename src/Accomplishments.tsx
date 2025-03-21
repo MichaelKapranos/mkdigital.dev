@@ -54,6 +54,8 @@ const Accomplishments: React.FC = () => {
   const [futureGoals, setFutureGoals] = useState<Goal[]>([]);
 
   useEffect(() => {
+    try {
+      console.log(client.models); // Check if JobSalary is present
     const observeCurrentGoals = client.models.CurrentGoal.observeQuery().subscribe({
       next: (data) => setCurrentGoals(data.items as Goal[]),
     });
@@ -62,10 +64,14 @@ const Accomplishments: React.FC = () => {
       next: (data) => setFutureGoals(data.items as Goal[]),
     });
 
+
     return () => {
       observeCurrentGoals.unsubscribe();
       observeFutureGoals.unsubscribe();
     };
+  } catch (error) {
+    console.error('Error fetching salaries:', error);
+  }
   }, []);
 
   const handleStatusChange = async (index: number, type: 'current' | 'future', newStatus: string) => {
