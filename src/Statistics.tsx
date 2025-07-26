@@ -98,7 +98,7 @@ const Statistics = () => {
           Site Reliability Engineer(SRE), £35K - £53K/yr. £43K/yr Average base pay <br/>
           Aws Cloud Engineer, £34K - £57K/yr. £44K/yr Average base pay (Average 2k bonus) <br/>
           Aws Devops Engineer, £33K - £51K/yr. £41K/yr Average base pay (Average 3k bonus)<br/>
-          <br/><br/>Most of these jobs also have an average bonus of 1-3k
+          <br/><br/>Most of these jobs also have an average bonus of 1-3k.
         </p>
       </div>
     </div>
