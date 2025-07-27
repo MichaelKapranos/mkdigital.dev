@@ -4,13 +4,14 @@
   margin: 0 auto;
   text-align: center;
 }
-
+.accomplishments-container h2{
+  border-top: 2px solid orange;
+  padding-top: 20px;
+    margin-top: 30px;
+}
 .accomplishments-title {
   font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #333;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
+  color: black;
 }
 
 .certifications {

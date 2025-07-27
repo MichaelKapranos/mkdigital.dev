@@ -90,7 +90,8 @@ const Accomplishments: React.FC = () => {
       <h1 className="accomplishments-title">Goals & Accomplishments</h1>
       
       <div className="certifications">
-        <h2>Certifications</h2>
+        <h2 style={{ width: '100%' }}>Certifications</h2>
+
         <div className="certifications-wrapper">
           <button className="scroll-btn left" onClick={scrollLeft}>&lt;</button>
           <div className="certifications-scroll" ref={scrollRef}>

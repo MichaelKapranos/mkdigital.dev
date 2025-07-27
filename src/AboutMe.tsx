@@ -1,12 +1,44 @@
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './AboutMe.css';
+import { generateClient } from "aws-amplify/data";
+import type { Schema } from '../amplify/data/resource'; // Adjust the path if necessary
 
 const AboutMe: React.FC = () => {
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+  
+    const scrollLeft = () => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: -210, behavior: 'smooth' });
+      }
+    };
+  
+    const scrollRight = () => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 210, behavior: 'smooth' });
+      }
+    };
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        if (scrollRef.current) {
+          if (scrollRef.current.scrollLeft + scrollRef.current.clientWidth >= scrollRef.current.scrollWidth) {
+            scrollRef.current.scrollLeft = 0;
+          } else {
+            scrollRef.current.scrollBy({ left: 210, behavior: 'smooth' });
+          }
+        }
+      }, 3000); // Adjust the interval as needed
+  
+      return () => clearInterval(interval);
+    }, []);
+
   return (
     <div className="aboutMe-container">
       <h1 className="aboutMe-title">About Me</h1>
       <div className="aboutMe-content">
+        <h2></h2>
         <p>
           Hi, I'm Michael Kapranos — a software developer and cloud engineer with a passion for building scalable systems and exploring the ever-evolving world of cloud technologies.
         </p>
@@ -33,12 +65,29 @@ const AboutMe: React.FC = () => {
           <li><strong>Pi-hole Setup</strong>: Configured a Raspberry Pi to manage network traffic and block unwanted content.</li>
         </ul>
         <h2>Certifications</h2>
-        <ul>
-          <li>AWS Cloud Practitioner – 04/2022</li>
-          <li>AWS Solutions Architect Associate – 07/2024</li>
-          <li>GCP Associate Cloud Engineer – 11/2024</li>
-          <li>AWS Solutions Architect Professional – In Progress</li>
-        </ul>
+      <div className="certifications">
+        <div className="certifications-wrapper">
+          <button className="scroll-btn left" onClick={scrollLeft}>&lt;</button>
+          <div className="certifications-scroll" ref={scrollRef}>
+            <div className="credly-badge">
+              <a href="https://www.credly.com/badges/36c93887-ab85-4615-bc35-bea4f7181064" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="Credly Badge 1" />
+              </a>
+            </div>
+            <div className="credly-badge">
+              <a href="https://www.credly.com/badges/436fccd1-d732-49ed-97fe-574bdadb35b3" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="Credly Badge 2" />
+              </a>
+            </div>
+            <div className="credly-badge">
+              <a href="https://www.credly.com/badges/a81169e4-13ce-49ae-a7a4-07ad68bce4d9/public_url" target="_blank" rel="noopener noreferrer">
+                <img src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png" alt="Credly Badge 3" />
+              </a>
+            </div>
+          </div>
+          <button className="scroll-btn right" onClick={scrollRight}>&gt;</button>
+        </div>
+      </div>
         <h2>Philosophy</h2>
         <p>
           I thrive on solving complex problems and learning new technologies. Whether it's diving into a new cloud service or building something from scratch, I’m always looking for the next challenge that pushes me to grow. My self-motivation and adaptability have helped me succeed in both professional and personal development projects.

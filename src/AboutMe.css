@@ -9,10 +9,8 @@
 
 .aboutMe-title {
   font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #333;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
+  /* margin-bottom: 40px; */
+  color: black;
 }
 
 .aboutMe-content {
@@ -21,7 +19,13 @@
 
 .aboutMe-content h2 {
   margin-top: 30px;
-  color: #444;
+  color: black;
+  border-top: 2px solid orange;
+  padding-top: 20px;
+}
+
+.aboutMe-content p {
+  color: #333333;
 }
 
 .aboutMe-content ul {
@@ -46,4 +50,105 @@
 
 .aboutMe-footer a:hover {
   text-decoration: underline;
+}
+
+.certifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.certifications h2 {
+  margin-bottom: 10px;
+}
+
+.certifications-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 660px; /* Maximum width to fit 3 badges */
+  width: 100%;
+}
+
+.certifications-scroll {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.credly-badge {
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+.credly-badge img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border: none;
+}
+
+.scroll-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scroll-btn.left {
+  left: -5%; /* Position outside the left side of the badges */
+}
+
+.scroll-btn.right {
+  right: -5%; /* Position outside the right side of the badges */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .certifications-wrapper {
+    max-width: 440px; /* Adjust to fit 2 badges */
+  }
+
+  .certifications-scroll {
+    width: 420px; /* Adjust to fit 2 badges */
+  }
+
+  .scroll-btn.left {
+    left: -40px; /* Adjust for smaller screens */
+  }
+
+  .scroll-btn.right {
+    right: -40px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-wrapper {
+    max-width: 220px; /* Adjust to fit 1 badge */
+  }
+
+  .certifications-scroll {
+    width: 200px; /* Adjust to fit 1 badge */
+  }
+
+  .scroll-btn.left {
+    left: -30px; /* Adjust for smaller screens */
+  }
+
+  .scroll-btn.right {
+    right: -30px; /* Adjust for smaller screens */
+  }
 }
