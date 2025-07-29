@@ -1,0 +1,35 @@
+.magicMirror-container {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.magicMirror-title {
+  font-size: 2.5em;
+  /* margin-bottom: 40px; */
+  color: black;
+}
+
+.magicMirror-content {
+  text-align: left;
+}
+
+.magicMirror-content h2 {
+  margin-top: 30px;
+  color: black;
+  border-top: 2px solid orange;
+  padding-top: 20px;
+}
+
+.magicMirror-content p {
+  color: #333333;
+}
+
+.magicMirror-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}

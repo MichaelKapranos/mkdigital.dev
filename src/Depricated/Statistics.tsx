@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '../amplify/data/resource'; // Adjust the path if necessary
+import type { Schema } from '../../amplify/data/resource'; // Adjust the path if necessary
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import './Statistics.css';

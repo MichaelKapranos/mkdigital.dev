@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
-import './AboutMe.css';
-
+import '../css/aboutMe.css';
+import { Link } from 'react-router-dom';
 
 const AboutMe: React.FC = () => {
 
@@ -57,12 +57,25 @@ const AboutMe: React.FC = () => {
         </p>
 
         <h2>Personal Projects</h2>
+
         <ul>
-          <li><strong>Magic Mirror</strong>: Built from scratch and powered by a Raspberry Pi.</li>
-          <li><strong>Game Server Box</strong>: Converted a mini Windows PC into a Linux-based, headless game server using Docker.</li>
-          <li><strong>Walking Table (In Progress)</strong>: A robotics project inspired by the Strandbeest, using C# to control motorized legs with plans to integrate AI and computer vision.</li>
-          <li><strong>Pi-hole Setup</strong>: Configured a Raspberry Pi to manage network traffic and block unwanted content.</li>
+          <li>
+            <Link to="/projects/magic-mirror"><strong>Magic Mirror</strong></Link>: Built from scratch and powered by a Raspberry Pi.
+          </li>
+          <li>
+            <Link to="/projects/game-server"><strong>Game Server Box</strong></Link>: Converted a mini Windows PC into a Linux-based, headless game server using Docker.
+          </li>
+          <li>
+            <Link to="/projects/walking-table"><strong>Walking Table (In Progress)</strong></Link>: A robotics project inspired by the Strandbeest, using C# to control motorized legs with plans to integrate AI and computer vision.
+          </li>
+          <li>
+            <Link to="/projects/pi-hole"><strong>Pi-hole Setup</strong></Link>: Configured a Raspberry Pi to manage network traffic and block unwanted content.
+          </li>
+          <li>
+            <Link to="/projects/website"><strong>Website</strong></Link>: Created and developed in the cloud with the use of Amplify and GIT. All infrastructure/routing created manually.
+          </li>
         </ul>
+
         <h2>Certifications</h2>
       <div className="certifications">
         <div className="certifications-wrapper">

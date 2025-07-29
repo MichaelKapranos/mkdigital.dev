@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaChartBar, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
-import './Sidebar.css';
+import { FaHome, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
+import '../css/sidebar.css';
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -24,10 +24,10 @@ const Sidebar = () => {
         <FaHome />
         {isExpanded && <span>Home</span>}
       </Link>
-      <Link to="/statistics" className="sidebar-icon">
+{/*       <Link to="/statistics" className="sidebar-icon">
         <FaChartBar />
         {isExpanded && <span>Statistics</span>}
-      </Link>
+      </Link> */}
       <Link to="/projects" className="sidebar-icon">
         <FaProjectDiagram />
         {isExpanded && <span>Projects</span>}
