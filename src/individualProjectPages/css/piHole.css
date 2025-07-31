@@ -42,3 +42,43 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f2f2f2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 150px;
+  animation: fadeInUp 0.01s ease-in-out;
+}
+
+.stat-number {
+  font-size: 2em;
+  color: #2c7be5;
+}
+
+.stat-label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

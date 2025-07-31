@@ -69,11 +69,6 @@ const AboutMe: React.FC = () => {
             <strong>Game Server Box</strong>: Converted a mini Windows PC into a Linux-based, headless game server using Docker.
           </li>
           </Link>
-          <Link to="/projects/walking-table">
-          <li className="project-link">
-            <strong>Walking Table (In Progress)</strong>: A robotics project inspired by the Strandbeest, using C# to control motorized legs with plans to integrate AI and computer vision.
-          </li>
-          </Link>
           <Link to="/projects/pi-hole">
           <li className="project-link">
             <strong>Pi-hole Setup</strong>: Configured a Raspberry Pi to manage network traffic and block unwanted content.
@@ -81,7 +76,12 @@ const AboutMe: React.FC = () => {
           </Link>
           <Link to="/projects/website">
           <li className="project-link">
-            <strong>Website</strong>: Created and developed in the cloud with the use of Amplify and GIT. All infrastructure/routing created manually.
+            <strong>Personal Portfolio Website</strong>: Created and developed in the cloud with the use of Amplify and GIT. All infrastructure/routing created manually.
+          </li>
+          </Link>
+          <Link to="/projects/walking-table">
+          <li className="project-link">
+            <strong>Walking Table (In Progress)</strong>: A robotics project inspired by the Strandbeest, using C# to control motorized legs with plans to integrate AI and computer vision.
           </li>
           </Link>
         </ul>

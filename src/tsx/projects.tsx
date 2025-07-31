@@ -2,36 +2,39 @@ import React from 'react';
 import '../css/projects.css'; 
 import { Link } from 'react-router-dom'; 
 
+
 const projects = [
   {
     id: 'magic-mirror',
-    image: 'https://picsum.photos/150', // New placeholder image URL
-    title:'test1',
-    summary: 'This is the summary of project 1. '
+    image: 'https://picsum.photos/150',
+    title: 'Magic Mirror',
+    summary: 'A smart mirror with a custom wooden frame, touchscreen, and modules for weather, calendar, YouTube, and more.'
   },
   {
-    id: 2,
-    image: 'https://picsum.photos/150', // New placeholder image URL
-    summary: 'This is the summary of project 2.'
+    id: 'game-server',
+    image: 'https://picsum.photos/150',
+    title: 'Game Server Box',
+    summary: 'A headless Ubuntu server running multiple Dockerized game servers with port forwarding for external access.'
   },
   {
-    id: 3,
-    image: 'https://picsum.photos/150', // New placeholder image URL
-    summary: 'This is the summary of project 2.'
+    id: 'pi-hole',
+    image: 'https://picsum.photos/150',
+    title: 'Pi-Hole',
+    summary: 'A Raspberry Pi 2W running Pi-hole and an ad blocker to filter network traffic and display real-time stats.'
   },
   {
-    id: 4,
-    image: 'https://picsum.photos/150', // New placeholder image URL
-    summary: 'This is the summary of project 2.'
+    id: 'personalWebsite',
+    image: 'https://picsum.photos/150',
+    title: 'Personal Portfolio Website',
+    summary: 'This site! Built with React and hosted on AWS Amplify with CI/CD via Git and custom DNS routing.'
   },
   {
-    id: 5,
-    image: 'https://picsum.photos/150', // New placeholder image URL
-    summary: 'This is the summary of project 2.'
+    id: 'walking-table',
+    image: 'https://picsum.photos/150',
+    title: 'Walking Table (In Progress)',
+    summary: 'temp.' // You mentioned not to write this one yet
   },
-  // Add more projects as needed
 ];
-
 
 const Projects: React.FC = () => {
   return (

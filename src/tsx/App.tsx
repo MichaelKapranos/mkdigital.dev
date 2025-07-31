@@ -23,10 +23,9 @@ const App: React.FC = () => {
         <Route path="/projects" element={<Projects />} />        
         <Route path="/projects/magic-mirror" element={<MagicMirror />} />       
         <Route path="/projects/game-server" element={<GameServer />} />
-        <Route path="/projects/walking-table" element={<WalkingTable />} />
         <Route path="/projects/pi-hole" element={<PiHole />} />
-        <Route path="/projects/website" element={<WebsiteProject />} />
-
+        <Route path="/projects/personalWebsite" element={<WebsiteProject />} />
+        <Route path="/projects/walking-table" element={<WalkingTable />} />
       </Routes>
     </Router> 
   );
