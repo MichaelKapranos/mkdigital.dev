@@ -1,11 +1,11 @@
-import '../css/magicMirror.css'; 
-const magicMirror: React.FC = () => {
+import '../css/walkingTable.css'; 
+const walkingTable: React.FC = () => {
 
     return (
-        <div className="magicMirror-container">
-        <h1 className="magicMirror-title">Title</h1>
+        <div className="walkingTable-container">
+        <h1 className="walkingTable-title">Title</h1>
         </div>
     );
 };
 
-export default magicMirror;
+export default walkingTable;

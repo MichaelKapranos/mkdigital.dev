@@ -1,4 +1,4 @@
-.magicMirror-container {
+.walkingTable-container {
   max-width: 60%;
   margin: 0 auto;
   text-align: center;
@@ -7,28 +7,28 @@
   color: #333;
 }
 
-.magicMirror-title {
+.walkingTable-title {
   font-size: 2.5em;
   /* margin-bottom: 40px; */
   color: black;
 }
 
-.magicMirror-content {
+.walkingTable-content {
   text-align: left;
 }
 
-.magicMirror-content h2 {
+.walkingTable-content h2 {
   margin-top: 30px;
   color: black;
   border-top: 2px solid orange;
   padding-top: 20px;
 }
 
-.magicMirror-content p {
+.walkingTable-content p {
   color: #333333;
 }
 
-.magicMirror-content ul {
+.walkingTable-content ul {
   list-style-type: disc;
   padding-left: 20px;
   margin-top: 10px;

@@ -1,4 +1,4 @@
-.magicMirror-container {
+.personalWebsite-container {
   max-width: 60%;
   margin: 0 auto;
   text-align: center;
@@ -7,28 +7,28 @@
   color: #333;
 }
 
-.magicMirror-title {
+.personalWebsite-title {
   font-size: 2.5em;
   /* margin-bottom: 40px; */
   color: black;
 }
 
-.magicMirror-content {
+.personalWebsite-content {
   text-align: left;
 }
 
-.magicMirror-content h2 {
+.personalWebsite-content h2 {
   margin-top: 30px;
   color: black;
   border-top: 2px solid orange;
   padding-top: 20px;
 }
 
-.magicMirror-content p {
+.personalWebsite-content p {
   color: #333333;
 }
 
-.magicMirror-content ul {
+.personalWebsite-content ul {
   list-style-type: disc;
   padding-left: 20px;
   margin-top: 10px;

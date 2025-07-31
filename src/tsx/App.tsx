@@ -7,7 +7,7 @@ import MagicMirror from '../individualProjectPages/tsx/magicMirror';
 import GameServer from '../individualProjectPages/tsx/gameServer';
 import WalkingTable from '../individualProjectPages/tsx/walkingTable';
 import PiHole from '../individualProjectPages/tsx/piHole';
-import WebsiteProject from '../individualProjectPages/tsx/websiteProject';
+import WebsiteProject from '../individualProjectPages/tsx/personalWebsite';
 
 //import Statistics from './Depricated/Statistics';
 import Projects from './projects';

@@ -52,6 +52,32 @@
   text-decoration: underline;
 }
 
+.project-list a {
+  text-decoration: none;
+  color: black;
+}
+
+.project-list a:hover {
+  text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+.project-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: black;
+  font-weight:100;
+
+}
+
+.project-link strong {
+  font-weight:900;
+  color: black;
+}
+
 .certifications {
   display: flex;
   flex-direction: column;
