@@ -43,7 +43,6 @@ const Accomplishments: React.FC = () => {
   }, []);
 
   const [currentGoals, setCurrentGoals] = useState<Goal[]>([]);
-  const [futureGoals, setFutureGoals] = useState<Goal[]>([]);
 
   useEffect(() => {
     try {
@@ -52,38 +51,13 @@ const Accomplishments: React.FC = () => {
         next: (data) => setCurrentGoals(data.items as Goal[]),
       });
 
-      const observeFutureGoals = client.models.FutureGoal.observeQuery().subscribe({
-        next: (data) => setFutureGoals(data.items as Goal[]),
-      });
-
       return () => {
         observeCurrentGoals.unsubscribe();
-        observeFutureGoals.unsubscribe();
       };
     } catch (error) {
       console.error('Error fetching salaries:', error);
     }
   }, []);
-
-  const handleStatusChange = async (index: number, type: 'current' | 'future', newStatus: string) => {
-    try {
-      if (type === 'current') {
-        const updatedGoals = [...currentGoals];
-        const goalToUpdate = updatedGoals[index];
-        goalToUpdate.status = newStatus;
-        setCurrentGoals(updatedGoals);
-        await client.models.CurrentGoal.update({ id: goalToUpdate.id, status: newStatus });
-      } else {
-        const updatedGoals = [...futureGoals];
-        const goalToUpdate = updatedGoals[index];
-        goalToUpdate.status = newStatus;
-        setFutureGoals(updatedGoals);
-        await client.models.FutureGoal.update({ id: goalToUpdate.id, status: newStatus });
-      }
-    } catch (error) {
-      console.error('Error updating goal status:', error);
-    }
-  };
 
   return (
     <div className="accomplishments-container">
@@ -125,7 +99,7 @@ const Accomplishments: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {currentGoals.map((goal, index) => (
+            {currentGoals.map((goal) => (
               <tr key={goal.id}>
                 <td>{goal.task}</td>
                 <td>{goal.status}</td>
