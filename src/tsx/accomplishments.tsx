@@ -116,13 +116,12 @@ const Accomplishments: React.FC = () => {
       </div>
 
       <div className="projects-goals">
-        <h2>Current Work & Goals</h2>
+        <h2>Current & Future Goals</h2>
         <table className="goals-table">
           <thead>
             <tr>
               <th>Task</th>
               <th>Status</th>
-              <th>Change Status</th>
             </tr>
           </thead>
           <tbody>
@@ -130,43 +129,6 @@ const Accomplishments: React.FC = () => {
               <tr key={goal.id}>
                 <td>{goal.task}</td>
                 <td>{goal.status}</td>
-                <td>
-                  <select value={goal.status ?? ''} onChange={(e) => handleStatusChange(index, 'current', e.target.value)}>
-                    <option value="Not Started">Not Started</option>
-                    <option value="On Hold">On Hold</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Done">Done</option>
-                  </select>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div className="future-goals">
-        <h2>Future Goals</h2>
-        <table className="goals-table">
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Status</th>
-              <th>Change Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {futureGoals.map((goal, index) => (
-              <tr key={goal.id}>
-                <td>{goal.task}</td>
-                <td>{goal.status}</td>
-                <td>
-                  <select value={goal.status ?? ''} onChange={(e) => handleStatusChange(index, 'future', e.target.value)}>
-                    <option value="Not Started">Not Started</option>
-                    <option value="On Hold">On Hold</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Done">Done</option>
-                  </select>
-                </td>
               </tr>
             ))}
           </tbody>
