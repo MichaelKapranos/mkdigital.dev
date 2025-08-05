@@ -117,11 +117,13 @@
 }
 
 /* Column widths */
-.goals-table th:nth-child(1), .goals-table td:nth-child(1) {
-  width: 75%; /* Task column */
+.goals-table th:nth-child(2), .goals-table td:nth-child(2) {
+  width: 70%; /* Task column */
 }
 
-.goals-table th:nth-child(2), .goals-table td:nth-child(2),
+.goals-table th:nth-child(1), .goals-table td:nth-child(1) {
+  width:17.5%
+}
 .goals-table th:nth-child(3), .goals-table td:nth-child(3) {
   width: 12.5%; /* Status and Change Status columns */
 }
