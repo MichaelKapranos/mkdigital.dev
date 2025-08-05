@@ -25,14 +25,7 @@ const schema = a.schema({
   // Adding the CurrentGoal model
   CurrentGoal: a
     .model({
-      task: a.string(),
-      status: a.string(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
-
-  // Adding the FutureGoal model
-  FutureGoal: a
-    .model({
+      title: a.string(),
       task: a.string(),
       status: a.string(),
     })

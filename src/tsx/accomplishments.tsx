@@ -7,6 +7,7 @@ const client = generateClient<Schema>();
 
 type Goal = {
   id: string;
+  title: string | null;
   task: string | null;
   status: string | null;
   createdAt: string;
@@ -95,12 +96,14 @@ const Accomplishments: React.FC = () => {
           <thead>
             <tr>
               <th>Task</th>
+              <th>Description</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {currentGoals.map((goal) => (
               <tr key={goal.id}>
+                <td>{goal.title}</td>
                 <td>{goal.task}</td>
                 <td>{goal.status}</td>
               </tr>
