@@ -49,7 +49,13 @@ const Accomplishments: React.FC = () => {
     try {
       console.log(client.models); // Check if JobSalary is present
       const observeCurrentGoals = client.models.CurrentGoal.observeQuery().subscribe({
-        next: (data) => setCurrentGoals(data.items as Goal[]),
+      next: (data) => {
+        const orderedStatuses = ['Done', 'In Progress', 'Not Started'];
+        const sortedGoals = (data.items as Goal[]).sort((a, b) => {
+          return orderedStatuses.indexOf(a.status ?? '') - orderedStatuses.indexOf(b.status ?? '');
+        });
+        setCurrentGoals(sortedGoals);
+      },
       });
 
       return () => {
