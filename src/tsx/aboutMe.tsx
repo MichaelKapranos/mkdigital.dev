@@ -74,12 +74,12 @@ const AboutMe: React.FC = () => {
             <strong>Pi-hole Setup</strong>: Configured a Raspberry Pi to manage network traffic and block unwanted content.
           </li>
           </Link>
-          <Link to="/projects/website">
+          <Link to="/projects/personalWebsite">
           <li className="project-link">
             <strong>Personal Portfolio Website</strong>: Created and developed in the cloud with the use of Amplify and GIT. All infrastructure/routing created manually.
           </li>
           </Link>
-          <Link to="/projects/walking-table">
+          <Link to="/projects/personalWebsite">
           <li className="project-link">
             <strong>Walking Table (In Progress)</strong>: A robotics project inspired by the Strandbeest, using C# to control motorized legs with plans to integrate AI and computer vision.
           </li>
