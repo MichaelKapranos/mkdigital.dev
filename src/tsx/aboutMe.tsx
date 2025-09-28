@@ -37,7 +37,6 @@ const AboutMe: React.FC = () => {
     <div className="aboutMe-container">
       <h1 className="aboutMe-title">About Me</h1>
       <div className="aboutMe-content">
-        <h2></h2>
         <p>
           Hi, I'm Michael Kapranos — a software developer and cloud engineer with a passion for building scalable systems and exploring the ever-evolving world of cloud technologies.
         </p>

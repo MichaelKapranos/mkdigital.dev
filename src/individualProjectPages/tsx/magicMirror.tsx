@@ -1,4 +1,5 @@
 import '../css/magicMirror.css';
+import magicmirror from '../../assets/magicmirror.jpg';
 
 const MagicMirror: React.FC = () => {
   return (
@@ -9,8 +10,7 @@ const MagicMirror: React.FC = () => {
         <p>
           This Magic Mirror was a collaborative project between myself and a designer (DT). The goal was to create a sleek, interactive smart mirror that combines aesthetics with functionality. I handled all software and Raspberry Pi integration, while DT focused on the physical build and design.
         </p>
-        <img src="/images/mirror-final.jpg" alt="Finished Magic Mirror" className="project-image" />
-
+        <img src={magicmirror} alt="Finished Magic Mirror" className="project-image" />
         <h2>Hardware & Build</h2>
         <p>
           The mirror was built using a custom wooden frame, spray-painted for a modern finish. A standard monitor was mounted behind the frame and covered with Linarun one-way window film to create the reflective surface. An infrared (IR) touch frame was added to enable touchscreen functionality.

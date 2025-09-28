@@ -1,4 +1,5 @@
 import '../css/gameServer.css';
+import ServerBox from '../../assets/ServerBox.jpg';
 
 const GameServer: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const GameServer: React.FC = () => {
         <p>
           This project was created to strengthen my skills in Linux command line and Docker. I repurposed a small Windows box by wiping it and flashing a minimal Ubuntu installation (no GUI) using a microSD card. The goal was to manage everything through the terminal and build a lightweight, efficient server environment.
         </p>
-
+        <img src={ServerBox} alt="Finished Magic Mirror" className="project-image" />
         <h2>Setup & Configuration</h2>
         <p>
           After installing Ubuntu, I configured the system entirely via the command line. I used the box to host multiple game servers, each isolated in its own Docker container. This allowed me to run them simultaneously while keeping resource usage low and management simple.

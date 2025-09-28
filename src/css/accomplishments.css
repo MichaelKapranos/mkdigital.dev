@@ -4,14 +4,12 @@
   margin: 0 auto;
   text-align: center;
 }
-.accomplishments-container h2{
-  border-top: 2px solid orange;
-  padding-top: 20px;
-    margin-top: 30px;
-}
+
 .accomplishments-title {
   font-size: 2.5em;
   color: black;
+  border-bottom: 2px solid orange;
+  padding-bottom: 10px;
 }
 
 .certifications {
@@ -19,6 +17,8 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
+  border-bottom: 2px solid orange;
+  padding-bottom: 50px;
 }
 
 .certifications h2 {
@@ -32,6 +32,7 @@
   justify-content: center;
   max-width: 660px; /* Maximum width to fit 3 badges */
   width: 100%;
+  
 }
 
 .certifications-scroll {
